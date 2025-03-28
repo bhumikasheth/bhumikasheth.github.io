@@ -1,20 +1,25 @@
 ---
 import Icon from './Icon.astro';
+import type { iconPaths } from './IconPaths';
 const currentYear = new Date().getFullYear();
 ---
 
 <footer>
 	<div class="group">
 		<p>
-			Designed & Developed in Portland with <a href="https://astro.build/">Astro</a>
-			<Icon icon="rocket-launch" size="1.2em" />
+			Made with ❤️ by <a target="_blank" href="https://www.imsheth.com/?utm_source=bhumika_sheth&utm_medium=web&utm_campaign=bhumika_sheth_footer_website&utm_id=BS1">imsheth</a>
 		</p>
 		<p>&copy; {currentYear} Bhumika Sheth</p>
 	</div>
 	<p class="socials">
-		<a href="https://twitter.com/me"> Twitter</a>
-		<a href="https://github.com/me"> GitHub</a>
-		<a href="https://codepen.io/me"> CodePen</a>
+		<a target="_blank" href="https://twitter.com/thebhumikasheth" class="social">
+			<span class="sr-only">Twitter</span>
+			<Icon icon="twitter-logo" />	
+		</a>
+		<a target="_blank" href="https://www.linkedin.com/in/thebhumikasheth/" class="social">
+			<span class="sr-only">LinkedIn</span>
+			<Icon icon="linkedin-logo" />	
+		</a>
 	</p>
 </footer>
 <style>
