@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+
+import Icon from '../components/Icon.astro';
+import type { iconPaths } from '../components/IconPaths';
+
+---
+
+<BaseLayout title="Contact | Bhumika Sheth" description="Contact us at Bhumika Sheth">
+	<div class="stack gap-20">
+		<main class="wrapper policies">
+			<Hero
+				title="Contact"
+				tagline="You can react out to us at Bhumika Sheth via following modes."
+			>
+				<img
+					alt="Modes to reach out to Bhumika Sheth"
+					width="1920"
+					height="1281"
+					src="/assets/contact.jpg"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Address</h2>
+				<div class="content">
+					<p>
+						B/93, Jaynidhi Township. Diwalipura. Vadodara 390007.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Whatsapp</h2>
+				<div class="content">
+					<p>+91 971-209-6479</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Other channels</h2>
+				<div class="content">
+					<p>
+						<a target="_blank" href="mailto:thebhumikasheth@gmail.com" class="social">
+							<span class="sr-only">Twitter</span>
+							<Icon icon="paper-plane-tilt" />	
+						</a>
+						<a target="_blank" href="https://twitter.com/thebhumikasheth" class="social">
+							<span class="sr-only">Twitter</span>
+							<Icon icon="twitter-logo" />	
+						</a>
+						<a target="_blank" href="https://www.linkedin.com/in/thebhumikasheth/" class="social">
+							<span class="sr-only">LinkedIn</span>
+							<Icon icon="linkedin-logo" />	
+						</a>
+					</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.policies {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.policies {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.policies > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
